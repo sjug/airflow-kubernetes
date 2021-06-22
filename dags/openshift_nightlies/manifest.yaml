@@ -41,6 +41,7 @@ platforms:
         profiles:
         - default
         - ovn
+        - ovn-common-target
       - name: azure
         profiles:
         - default
