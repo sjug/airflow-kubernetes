@@ -8,51 +8,23 @@ versionAliases:
 
 dagConfig:
   schedules:
-    enabled: true
+    enabled: false 
     default: "0 12 * * 1,3,5"
     openstack: "0 12 * * 1-6"
-  cleanupOnSuccess: true
+  cleanupOnSuccess: false 
 
 platforms:
   cloud:
-    - version: 4.8
-      releaseStream: 4.8.0-0.nightly
-      providers:
-      - name: aws
-        profiles:
-        - default
-        - ovn
-      - name: azure
-        profiles:
-        - default
-      - name: gcp
-        profiles:
-        - default
     - version: 4.9
       releaseStream: 4.9.0-0.nightly
       providers:
       - name: aws
         profiles:
-        - default
-        - ovn
+        - my_cool_username_1 
+        - my_cool_username_2
       - name: azure
         profiles:
-        - default
+        - my_cool_username_1 
       - name: gcp
         profiles:
-        - default
-  baremetal: 
-    - version: 4.8
-      releaseStream: latest-4.8
-      build: dev
-      profiles:
-      - jetski
-  openstack:
-    - version: 4.7
-      releaseStream: 4.7.0-0.nightly
-      profiles:
-      - default
-    - version: 4.8
-      releaseStream: 4.8.0-0.nightly
-      profiles:
-      - default
+        - my_cool_username_2
