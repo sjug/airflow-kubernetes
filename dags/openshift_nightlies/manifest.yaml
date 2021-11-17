@@ -76,6 +76,12 @@ platforms:
       config: 
         install: ovn-large.json
         benchmarks: large-control-plane.json
+    - name: ovn-superlarge
+      schedule: "0 12 15 * *"
+      config: 
+        install: ovn-superlarge.json
+        benchmarks: superlarge-control-plane.json
+
 
   rosa:
     versions: ["4.10"]
