@@ -91,4 +91,4 @@ platforms:
           install: rosa/ovn.json
           benchmarks: data-plane.json
 
-
+  baremetal:
