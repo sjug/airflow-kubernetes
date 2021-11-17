@@ -33,8 +33,8 @@ dagConfig:
 
 platforms:
   cloud:
-    versions: [4.9, "4.10"]
-    providers: ["aws", "gcp", "azure"]
+    versions: ["4.10"]
+    providers: ["aws", "gcp"]
     variants: 
     - name: sdn-control-plane
       schedule:  "0 12 * * 1,3,5"
@@ -76,45 +76,10 @@ platforms:
       config: 
         install: ovn-large.json
         benchmarks: large-control-plane.json
-    - name: acs
-      config: 
-        install: acs.json
-        benchmarks: acs.json
-
-  baremetal: 
-    build: dev
-    versions: [4.9]
-    variants: 
-    - name: jetski
-      config: 
-        install: baremetal/jetski.json
-        benchmarks: baremetal-benchmarks
-
-  openstack:
-    versions: [4.9, "4.10"]
-    variants:
-      - name: sdn
-        config:
-          install: openstack/sdn.json
-          benchmarks: openstack.json
-      - name: kuryr
-        config:
-          install: openstack/kuryr.json
-          benchmarks: openstack.json
 
   rosa:
-    versions: [4.9, "4.10"]
+    versions: ["4.10"]
     variants:
-      - name: sdn-control-plane
-        schedule:  "0 12 * * 1,3,5"
-        config:
-          install: rosa/sdn.json
-          benchmarks: control-plane.json
-      - name: sdn-data-plane
-        schedule: "0 12 * * 1"
-        config:
-          install: rosa/sdn.json
-          benchmarks: data-plane.json
       - name: ovn-control-plane
         schedule:  "0 12 * * 1,3,5"
         config:

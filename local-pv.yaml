@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  labels:
+    storage.openshift.com/local-volume-owner-name: lv-default-sc
+    storage.openshift.com/local-volume-owner-namespace: openshift-local-storage
+  name: local-pv-jtaleric-gavin-1
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 10Gi
+  local:
+    fsType: xfs
+    path: /mnt/local-storage/default-sc/lv_tv02h
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - perf-fc640-4.perf.lab.eng.rdu2.redhat.com
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: default-sc
+  volumeMode: Filesystem
