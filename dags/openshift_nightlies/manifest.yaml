@@ -91,4 +91,19 @@ platforms:
           install: rosa/ovn.json
           benchmarks: data-plane.json
 
-  baremetal:
+  baremetal: 
+    build: dev
+    versions: [4.9]
+    variants: 
+    - name: jetski
+      config: 
+        install: baremetal/jetski.json
+        benchmarks: baremetal-benchmarks
+
+  openstack:
+    versions: [4.9, "4.10"]
+    variants:
+      - name: sdn
+        config:
+          install: openstack/sdn.json
+          benchmarks: openstack.json
