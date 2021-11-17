@@ -66,6 +66,11 @@ platforms:
       config: 
         install: ovn-medium.json
         benchmarks: medium-control-plane.json
+    - name: ovn-sbdb-medium
+      schedule: "0 12 * * 1"
+      config: 
+        install: ovn-sbdb-medium.json
+        benchmarks: medium-control-plane.json
     - name: sdn-large
       schedule: "0 12 15 * *"
       config: 
